@@ -11,7 +11,7 @@
     <h3 style="display:inline-block;margin:auto 2%;">Zbierz wojsko</h3>
     <h2 style="display:inline-block;margin:auto 2%;">Przetrwaj!</h2>
 
-    <form class="" action="" method="post">
+    <form class="" action="login.php" method="post">
       <p> Login: <input type="text" name="login" value=""> </p>
       <p> Hasło: <input type="password" name="password" value=""> </p>
       <input type="submit" value="Zaloguj">
