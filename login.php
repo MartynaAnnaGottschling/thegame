@@ -46,7 +46,10 @@
         // save in session variable
         $_SESSION['user'] = $query_result->fetch_assoc();
 
-        //free the memory associated with the result
+        // unset failed verification session variable
+        unset($_SESSION['error_login']);
+
+        // free the memory associated with the result
         $query_result->free_result();
 
         // redirect to logged user's game panel
@@ -54,7 +57,8 @@
       }
       // if there is no such user
       else {
-
+        // set failed verification session variable
+        $_SESSION['error_login'] = '<span style="color:red">Nieprawidłowy login lub hasło!</span>';
         // redirect anonimous user to main site
         header('Location: index.php');
       }

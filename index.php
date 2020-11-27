@@ -1,3 +1,9 @@
+<?php
+
+  session_start();
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="pl" dir="ltr">
   <head>
@@ -16,5 +22,11 @@
       <p> Hasło: <input type="password" name="password" value=""> </p>
       <input type="submit" value="Zaloguj">
     </form>
+    <br>
+
+    <?php
+      if(isset($_SESSION['error_login'])) echo $_SESSION['error_login'];
+
+     ?>
   </body>
 </html>
