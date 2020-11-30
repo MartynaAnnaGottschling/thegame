@@ -2,6 +2,12 @@
 
   session_start();
 
+  // if user is not logged in redirect to login site
+  if (!isset($_SESSION['logged_user'])){
+    header('Location: index.php');
+    exit();
+  }
+
   $user_nick = $_SESSION['logged_user']['nick'];
   $user_materials = $_SESSION['logged_user']['materials'];
   $user_buildings = $_SESSION['logged_user']['buildings'];
