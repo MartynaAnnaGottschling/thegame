@@ -34,8 +34,14 @@
     $login = $_POST['login'];
     $password = $_POST['password'];
 
+    // remove html entieties from passed database
+    $login = htmlentities($login, ENT_QUOTES, "UTF-8");
+		$password = htmlentities($password, ENT_QUOTES, "UTF-8");
+
     // search for user with given credentials
-    $sql = "SELECT * FROM users WHERE email='$login' AND password='$password'";
+    $sql = sprintf("SELECT * FROM users WHERE email='%s' AND password='%s'",
+		mysqli_real_escape_string($connection,$login),
+		mysqli_real_escape_string($connection,$password));
 
     // perform query on the database
     $query_result = @$connection->query($sql);
