@@ -2,6 +2,12 @@
 
   session_start();
 
+  // if user not fulfill login form redirect to login site
+  if ((!isset($_POST['login'])) || (!isset($_POST['password']))){
+    header('Location: index.php');
+    exit();
+  }
+
   // file contains parametres for database connection
   require_once "connectdb.php";
   /*
@@ -57,7 +63,7 @@
       }
       // if there is no such user
       else {
-        
+
         unset($_SESSION['logged_user']);
 
         // set failed verification session variable
