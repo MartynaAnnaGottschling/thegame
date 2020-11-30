@@ -2,11 +2,11 @@
 
   session_start();
 
-  $user_nick = $_SESSION['user']['nick'];
-  $user_materials = $_SESSION['user']['materials'];
-  $user_buildings = $_SESSION['user']['buildings'];
-  $user_settlers = $_SESSION['user']['settlers'];
-  $user_premium_days = $_SESSION['user']['premium_days'];
+  $user_nick = $_SESSION['logged_user']['nick'];
+  $user_materials = $_SESSION['logged_user']['materials'];
+  $user_buildings = $_SESSION['logged_user']['buildings'];
+  $user_settlers = $_SESSION['logged_user']['settlers'];
+  $user_premium_days = $_SESSION['logged_user']['premium_days'];
 
  ?>
 

@@ -2,6 +2,12 @@
 
   session_start();
 
+  // if user is not logged in redirect to game panel
+  if (isset($_SESSION['logged_user'])){
+    header('Location: game.php');
+    exit();
+  }
+
  ?>
 
 <!DOCTYPE html>

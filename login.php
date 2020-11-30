@@ -44,7 +44,7 @@
       if ($how_many_users>0){
         // fetch result row - associative array
         // save in session variable
-        $_SESSION['user'] = $query_result->fetch_assoc();
+        $_SESSION['logged_user'] = $query_result->fetch_assoc();
 
         // unset failed verification session variable
         unset($_SESSION['error_login']);
@@ -57,6 +57,9 @@
       }
       // if there is no such user
       else {
+        
+        unset($_SESSION['logged_user']);
+
         // set failed verification session variable
         $_SESSION['error_login'] = '<span style="color:red">Nieprawidłowy login lub hasło!</span>';
         // redirect anonimous user to main site
