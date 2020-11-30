@@ -21,6 +21,7 @@
     <h1 style="display:inline-block;">Witaj Wojowniku</h1>
     <?php
       echo '<h1 style="display:inline-block; color: blue; margin-left: 10px;">'.$user_nick.'</h1>';
+      echo '<br><a href="logout.php">[ Wyloguj się ]</a>';
      ?>
     <br>
 
